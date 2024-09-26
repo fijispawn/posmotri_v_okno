@@ -13,7 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -35,4 +35,239 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+fieldset {
+  border: none;
+}
+
+/* main content */
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 30px;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  width: 400px;
+  overflow-y: scroll;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 30px;
+}
+
+.content__details .title {
+  font-size: 75px;
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  line-height: 70px;
+  margin-bottom: 26px;
+}
+
+/* card vids styles  */
+
+.content__video-card {
+  display: flex;
+  height: 100px;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card:focus-visible {
+  outline: 2px solid white;
+}
+
+.content__video-card-description-container {
+  width: 200px;
+  font-family: Oswald, sans-serif;
+}
+
+.content__video-card-title {
+  font-size: 30px;
+  font-family: Oswald, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  font-size: 18px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 100;
+}
+
+.content__video-card-thumbnail {
+  min-width: 200px;
+}
+
+/* search form */
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.search-form__label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: white solid 1px;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+}
+
+.search-form__checkbox:focus-visible {
+  outline: 2px solid white;
+}
+
+.search-form__label-text {
+  color: white;
+  font-size: 18px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  appearance: none;
+  background-color: transparent;
+  border-style: none;
+  border-bottom: solid thin white;
+  border-top: solid thin white;
+  font-size: 18px;
+  min-width: 224px;
+  font-family: inherit;
+  outline: none;
+  color: white;
+}
+
+.search-form__textfield:active {
+  border: solid thin white;
+}
+
+.search-form__textfield::after {
+  content: "";
+  border: solid thin white;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 2px solid white;
+}
+
+.search-form__textfield:hover {
+  cursor: text;
+}
+
+.search-form__submit-button {
+  width: 194px;
+}
+
+/* buttons */
+
+button {
+  height: 34px;
+  background-color: transparent;
+  border: solid white thin;
+  color: white;
+  font-size: 18px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+button:active {
+  background-color: #545050;
+}
+
+button:focus-visible {
+  outline: 2px solid white;
+}
+
+.more-button {
+  min-width: 400px;
+}
+
+.result__video {
+  width: 710px;
+  margin-bottom: 12px;
+}
+
+.result__video-container {
+  position: relative;
 }
