@@ -93,8 +93,6 @@ fieldset {
 
 .content__video-card {
   display: flex;
-  height: auto;
-  max-height: 100px;
   justify-content: space-between;
 }
 
@@ -130,9 +128,14 @@ fieldset {
 }
 
 .content__video-card-thumbnail {
-  max-width: 200px;
+  min-width: 200px;
+  max-height: 100px;
   object-fit: cover;
   object-position: center;
+}
+
+.content__video-card-description-container{
+  margin-left: 2px;
 }
 
 /* search form */
@@ -274,7 +277,8 @@ button:focus-visible {
 
 .result__video {
   width: 710px;
-  margin-bottom: 12px;
+  height: 390px;
+  margin-bottom: 8px;
   object-fit: cover;
   object-position: center;
 }
