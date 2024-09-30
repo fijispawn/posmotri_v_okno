@@ -115,7 +115,7 @@ fieldset {
 }
 
 .content__card-link:focus-visible {
-  outline: 2px solid white; /* Сохраняем визуальный индикатор фокуса */
+  outline: 2px solid white; 
 }
 
 .content__video-card-title {
