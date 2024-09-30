@@ -16,6 +16,9 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -35,12 +38,6 @@ fieldset {
 ul,
 ol {
   list-style: none;
-}
-
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .visually-hidden {
@@ -77,12 +74,10 @@ fieldset {
 
 .content__list {
   position: relative;
-  width: 400px;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 300px;
   display: flex;
   flex-direction: column;
-  align-items: end;
   gap: 30px;
 }
 
@@ -98,24 +93,29 @@ fieldset {
 
 .content__video-card {
   display: flex;
-  height: 100px;
+  height: auto;
+  max-height: 100px;
+  justify-content: space-between;
 }
 
-.content__video-card:active {
+.content__card-link_current {
   background-color: #545050;
 }
 
-.content__video-card:hover {
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
   text-decoration: underline;
 }
 
-.content__video-card:focus-visible {
-  outline: 2px solid white;
+.content__card-link:focus {
+  outline: none;
 }
 
-.content__video-card-description-container {
-  width: 200px;
-  font-family: Oswald, sans-serif;
+.content__card-link:focus-visible {
+  outline: 2px solid white; /* Сохраняем визуальный индикатор фокуса */
 }
 
 .content__video-card-title {
@@ -123,16 +123,16 @@ fieldset {
   font-family: Oswald, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-}
-
-.content__video-card-description {
-  font-size: 18px;
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 100;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 
 .content__video-card-thumbnail {
-  min-width: 200px;
+  max-width: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* search form */
@@ -189,8 +189,12 @@ fieldset {
   background-color: white;
 }
 
-.search-form__checkbox:focus-visible {
+.search-form__label:has(.search-form__checkbox:focus-visible) {
   outline: 2px solid white;
+}
+
+.search-form__checkbox:focus-visible {
+  outline: none;
 }
 
 .search-form__label-text {
@@ -255,6 +259,10 @@ button:active {
   background-color: #545050;
 }
 
+button:focus {
+  outline: none;
+}
+
 button:focus-visible {
   outline: 2px solid white;
 }
@@ -266,6 +274,8 @@ button:focus-visible {
 .result__video {
   width: 710px;
   margin-bottom: 12px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .result__video-container {
